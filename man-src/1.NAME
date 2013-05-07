@@ -1,0 +1,2 @@
+{program} manages the local debian trusted key database and remote installation repository databases. It allows the user to indicate from what repository they wish to install additional packages and with what key the authenticity of the downloads from the repository are to be verified.
+

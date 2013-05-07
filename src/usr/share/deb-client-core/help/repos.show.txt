@@ -1,0 +1,7 @@
+This command shows the list of additional repositories in a debian system. Each repository/release is declared in its own file. Example:{br}
+{program} repos -show{br}
+file                                     url                                                     release{br}
+indiestor-precise.list                   http://packages.indiestor.com/apt/ubuntu                precise{br}        
+noobslab-swar-themes-precise.list.save   http://ppa.launchpad.net/noobslab/swar-themes/ubuntu    precise{br}        
+precise-partner.list                     http://archive.canonical.com/ubuntu                     precise{br}        
+The first column is the file in which the repository/release has been declared. The second column is the url from which the debian package management system will download packages. The third column is the release from which the debian package system will download packages.

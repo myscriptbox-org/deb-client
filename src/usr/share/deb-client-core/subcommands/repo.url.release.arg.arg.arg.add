@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#-------------------------------------------------------
+# Written by Erik Poupaert
+# Phnom Penh, Cambodia, May 2013
+# Licensed under the General Public License (GPL)
+#-------------------------------------------------------
+source "$UTIL_FOLDER/args.fix-whitespace"
+name="$1"
+url="$2"
+release="$3"
+
+repoFile="$name-$release.list"
+repoPath="/etc/apt/sources.list.d/$repoFile"
+
+if [ -f "$repo" ] ; then
+	echo "ERROR: file '$repoFile' exists already." >&2
+	exit 1
+fi
+
+echo "deb $url $release main" | tee -a "$repoPath"
+echo "deb-src $url $release main" | tee -a "$repoPath"
+

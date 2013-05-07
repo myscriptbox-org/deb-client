@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+#-------------------------------------------------------
+
+#-------------------------------------------------------
+# Basic location variables
+#-------------------------------------------------------
+export THIS_SCRIPT=$(basename "$0")
+THIS_FOLDER=$(dirname "$0")
+if [[ $THIS_FOLDER == "." ]]; then 
+	THIS_FOLDER="$PWD"
+fi
+export USR_FOLDER=$(dirname "$THIS_FOLDER")
+export CORE_FOLDER="$USR_FOLDER/share/$THIS_SCRIPT-core"
+#-------------------------------------------------------
+# The following folders are standard locations
+#-------------------------------------------------------
+export SRC_FOLDER=$(dirname "$USR_FOLDER")
+export PACKAGE_FOLDER=$(dirname "$SRC_FOLDER")
+export PACKAGE_PARENT_FOLDER=$(dirname "$PACKAGE_FOLDER")
+export ETC_FOLDER="$SRC_FOLDER/etc"
+export ETC_SCRIPT_FOLDER="$ABSOLUTE_ROOT_FOLDER/etc/$THIS_SCRIPT.d"
+export UTIL_FOLDER="$CORE_FOLDER/util"
+export ROUTER_FOLDER="$CORE_FOLDER/router"
+export SUBCOMMANDS_FOLDER="$CORE_FOLDER/subcommands"
+export HELP_FOLDER="$CORE_FOLDER/help"
+export FINAL_MSG_FOLDER="$CORE_FOLDER/final-msg"
+#-------------------------------------------------------
+# Route to the subcommand script
+#-------------------------------------------------------
+source "$ROUTER_FOLDER/subcommand.route"
+$SUBCOMMAND
+export SUBCOMMAND_RETCODE=$?
+source "$FINAL_MSG_FOLDER/command.final-output"
+#-------------------------------------------------------
+

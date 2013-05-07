@@ -1,0 +1,12 @@
+[[/etc/apt]]
+This folder contains the overall database of trusted keys and remote installation repositories for a debian-style system.
+
+[[/etc/apt/sources.list]]
+This is the main table in which the system's default remote repositories have been declared during installation. {program} does not manage this file, as {program} only manages additional remote package installation repositories.
+
+[[/etc/apt/sources.list.d]]
+This directory contains a file per additional remote package installation repositories. {program} declares each additional remote package installation repository in this folder.
+
+[[/etc/apt/trusted.gpg]]
+This file is the trusted key database. For each remote package installation repository declared, it must contains an entry with a trusted key. Multiple repositories can have the same key, if they are being managed by the same entity. All package downloads are verified by the package management system for authenticity using these keys.
+

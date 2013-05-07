@@ -1,0 +1,7 @@
+This command lists the keys in the debian trusted key database. Example:{br}
+{program} keys -show{br}
+ftpmaster@ubuntu.com                     437D05B5   Ubuntu Archive Automatic Signing Key{br}
+cdimage@ubuntu.com                       FBB75451   Ubuntu CD Image Automatic Signing Key{br}
+ftpmaster@ubuntu.com                     3E5C1192   Ubuntu Extras Archive Automatic Signing Key{br}
+linux@dropbox.com                        5044912E   Dropbox Automatic Signing Key{br}
+The first column is the email address that identifies the key. The second column is the keyID, and the third column is the signatory's name.

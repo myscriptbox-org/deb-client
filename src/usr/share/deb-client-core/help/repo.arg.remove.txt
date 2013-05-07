@@ -1,0 +1,4 @@
+This command removes an additional, remote debian repository. Example:{br}
+{program} repo noobslab-swar-themes-precise.list -remove{br}
+The argument to supply is a repository declaration file, typically ending in the '.list' extension. You must run this command either as root or with sudo privileges.
+

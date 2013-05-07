@@ -1,0 +1,15 @@
+[[key]]
+Use this object path to manage an individual key in the debian trusted repository key database.
+
+[[keys]]
+Use this object path to manage the entire collection of debian trusted repository keys.
+
+[[repo]]
+Use this object path to manage an individual remote installation repository. You can declare it in your system or remove its declaration.
+
+[[repos]]
+Use this object path to manage the entire collection of remote installation repositories for your debian-based or debian-derived system.
+
+[[repo.url.release]]
+Use this object path to declare a repository's url and release.
+

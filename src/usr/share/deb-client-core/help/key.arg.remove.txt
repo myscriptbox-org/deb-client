@@ -1,0 +1,5 @@
+This command removes a trusted key from the debian trusted key database. Example:{br}
+{program} key info@garagesoft.com -remove{br}
+The key is represented by either an email address (if it is unique in the trusted key database) or else by a key ID. Example:{br}
+{program} key FBB75451 -remove{br}
+You must run this command either as root or with sudo privileges.

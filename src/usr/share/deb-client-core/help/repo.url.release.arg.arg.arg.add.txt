@@ -1,0 +1,6 @@
+This command adds a remote debian repository to the debian package management system. Synopsis:{br}
+sudo repo [reponame] [url] [release] -add{br}
+Example:{br}
+sudo repo indiestor http://packages.indiestor.com/apt/ubuntu precise -add{br}
+The {i}reponame{/i} parameter is only used to give a name to the additional repository declaration file. You can freely choose this name, as long as it is a valid filename. The reponame will help you to recognize the repository, if you ever want to remove it.
+

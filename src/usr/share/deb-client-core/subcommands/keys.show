@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+#-------------------------------------------------------
+# Written by Erik Poupaert
+# Phnom Penh, Cambodia, May 2013
+# Licensed under the General Public License (GPL)
+#-------------------------------------------------------
+while read line1; do
+        read line1Type keyStrengthAndId keyDate <<<"$line1"
+        while [ ! "$line1Type" = "pub" ] && [ ! "$line1Type" = "" ] ; do
+                read line1
+                read line1Type keyId keyDate <<<"$line1"
+        done
+        if [ "$line1Type" = "pub" ] ; then
+                read line2
+                read line2Type keyNameAndEmail <<<"$line2"
+                if [ "$line2Type" = "uid" ] ; then
+                        keyId=$(echo "$keyStrengthAndId" | sed "s|.*/\(.*\)|\1|")
+                        keyName=$(echo "$keyNameAndEmail" | sed "s|\(.*\) <.*>|\1|")
+                        email=$(echo "$keyNameAndEmail" | grep @ | sed "s|.* <\(.*\)>|\1|")
+                        printf "%-40s %-10s %-s\n" "$email" "$keyId" "$keyName"
+                fi
+        fi
+done < <(apt-key list | tail -n+3)
+

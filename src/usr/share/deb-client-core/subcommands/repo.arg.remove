@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#-------------------------------------------------------
+# Written by Erik Poupaert
+# Phnom Penh, Cambodia, May 2013
+# Licensed under the General Public License (GPL)
+#-------------------------------------------------------
+source "$UTIL_FOLDER/args.fix-whitespace"
+file="$1"
+filePath="/etc/apt/sources.list.d/$file"
+if [ ! -f "$filePath" ] ; then
+	echo "ERROR: repo file "$file" does not exist"
+	exit 1
+fi
+rm -f "$filePath"
+

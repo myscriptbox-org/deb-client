@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#-------------------------------------------------------
+# Written by Erik Poupaert
+# Phnom Penh, Cambodia, May 2013
+# Licensed under the General Public License (GPL)
+#-------------------------------------------------------
+FORMAT="%-40s %-55s %-15s\n"
+printf "$FORMAT" 'file' 'url' 'release' 
+while read file; do
+	base=$(basename "$file")
+	while read line ; do
+		read deb url release component remainder <<< "$line"
+		printf "$FORMAT" "$base" "$url" "$release"
+	done < <(cat -s "$file" 2> /dev/null | grep -v '^#' | grep -v '^ *$' | grep -v '^deb-src' | uniq)
+done < <(ls /etc/apt/sources.list.d/*)
+
