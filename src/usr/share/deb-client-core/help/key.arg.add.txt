@@ -1,4 +1,4 @@
 This command adds a key from a url to the debian trusted keys database. Example:{br}
-{command} key http://packages.garagesoft.com/garagesoft.pubkey -add{br}
+{program} key http://packages.garagesoft.com/garagesoft.pubkey -add{br}
 As the public repository keys are generally distributed by download, you need to enter a download url. Any url protocol (http, ftp, ...) supported by the 'wget' program is acceptable. You must run this command either as root or with sudo privileges.
 
