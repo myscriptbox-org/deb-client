@@ -5,6 +5,7 @@
 # Licensed under the General Public License (GPL)
 #-------------------------------------------------------
 source "$UTIL_FOLDER/args.fix-whitespace"
+
 keyid="$1"
 apt-key del "$keyid" > /dev/null
 
