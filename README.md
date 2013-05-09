@@ -35,17 +35,17 @@ shows the program's version.
 ### --license
 shows the program's license.
 
+### key [obj] -add
+This command adds a key from a url to the debian trusted keys database. Example:  
+**deb-client** key http://packages.garagesoft.com/garagesoft.pubkey -add  
+As the public repository keys are generally distributed by download, you need to enter a download url. Any url protocol (http, ftp, ...) supported by the 'wget' program is acceptable. You must run this command either as root or with sudo privileges.
+
 ### key [obj] -remove
 This command removes a trusted key from the debian trusted key database. Example:  
 **deb-client** key info@garagesoft.com -remove  
 The key is represented by either an email address (if it is unique in the trusted key database) or else by a key ID. Example:  
 **deb-client** key FBB75451 -remove  
 You must run this command either as root or with sudo privileges.
-### key [obj] -add
-This command adds a key from a url to the debian trusted keys database. Example:  
-{command} key http://packages.garagesoft.com/garagesoft.pubkey -add  
-As the public repository keys are generally distributed by download, you need to enter a download url. Any url protocol (http, ftp, ...) supported by the 'wget' program is acceptable. You must run this command either as root or with sudo privileges.
-
 ### keys -show
 This command lists the keys in the debian trusted key database. Example:  
 **deb-client** keys -show  
@@ -103,3 +103,4 @@ Report bugs to: erik@sankuru.biz
 
 # COPYRIGHT
 Licensed under GPL
+folder/generate-readme-stdout executed.
