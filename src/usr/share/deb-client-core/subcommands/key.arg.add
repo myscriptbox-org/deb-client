@@ -4,6 +4,7 @@
 # Phnom Penh, Cambodia, May 2013
 # Licensed under the General Public License (GPL)
 #-------------------------------------------------------
+source "$UTIL_FOLDER/msb.debug"
 source "$UTIL_FOLDER/args.fix-whitespace"
 url="$1"
 wget -q -O - "$url" | apt-key add -

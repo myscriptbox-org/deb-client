@@ -4,6 +4,7 @@
 # Phnom Penh, Cambodia, May 2013
 # Licensed under the General Public License (GPL)
 #-------------------------------------------------------
+source "$UTIL_FOLDER/msb.debug"
 while read line1; do
         read line1Type keyStrengthAndId keyDate <<<"$line1"
         while [ ! "$line1Type" = "pub" ] && [ ! "$line1Type" = "" ] ; do
